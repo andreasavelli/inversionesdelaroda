@@ -33,5 +33,16 @@
       "m2": 70,
       "img": ""
     }
-    ]
+  {
+  "titulo": "Duplex en Adeje",
+  "tipo": "Venta",
+  "inmueble": "Duplex",
+  "ubicacion": "Adeje",
+  "precio": 385000,
+  "hab": 2,
+  "banos": 2,
+  "m2": 90,
+  "img": ""
+}  
+  ]
 }
