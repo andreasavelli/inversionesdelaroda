@@ -1,0 +1,79 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: es
+
+collections:
+  - name: "propiedades"
+    label: "Propiedades"
+    files:
+      - label: "Lista de propiedades"
+        name: "properties"
+        file: "properties.json"
+        fields:
+          - label: "Propiedades"
+            name: "list"
+            widget: "list"
+            label_singular: "Propiedad"
+            summary: "{{fields.titulo}} — {{fields.ubicacion}}"
+            fields:
+              - label: "Título"
+                name: "titulo"
+                widget: "string"
+                hint: "Ej: Piso luminoso en el centro"
+
+              - label: "Tipo"
+                name: "tipo"
+                widget: "select"
+                options: ["Venta", "Alquiler"]
+
+              - label: "Tipo de inmueble"
+                name: "inmueble"
+                widget: "select"
+                options: ["Piso", "Casa", "Villa", "Ático", "Local"]
+
+              - label: "Ubicación"
+                name: "ubicacion"
+                widget: "string"
+                hint: "Ej: Santa Cruz de Tenerife"
+
+              - label: "Precio (€)"
+                name: "precio"
+                widget: "number"
+                hint: "Solo el número, sin puntos ni €. En alquiler, precio mensual."
+                value_type: "int"
+
+              - label: "Habitaciones"
+                name: "hab"
+                widget: "number"
+                value_type: "int"
+                min: 0
+                hint: "Pon 0 si es un local"
+
+              - label: "Baños"
+                name: "banos"
+                widget: "number"
+                value_type: "int"
+                min: 1
+
+              - label: "Metros cuadrados (m²)"
+                name: "m2"
+                widget: "number"
+                value_type: "int"
+                min: 1
+
+              - label: "Foto principal"
+                name: "img"
+                widget: "image"
+                required: false
+                hint: "Sube la foto principal de la propiedad"
+
+              - label: "Descripción"
+                name: "descripcion"
+                widget: "text"
+                required: false
+                hint: "Descripción opcional de la propiedad"
