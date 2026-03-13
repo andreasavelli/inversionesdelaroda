@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" width="360" height="240">
+
+  <!-- Casa izquierda -->
+  <path d="M10,62 L32,38 L54,62 L54,78 L16,78 L16,62 Z"
+        fill="none" stroke="#1C1714" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Casa central (más grande) -->
+  <path d="M38,54 L66,22 L94,54 L94,78 L46,78 L46,54 Z"
+        fill="none" stroke="#1C1714" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Puerta central dorada -->
+  <rect x="57" y="62" width="16" height="16" rx="1.5" fill="#B8966A"/>
+
+  <!-- Casa derecha -->
+  <path d="M74,58 L98,36 L122,58 L122,78 L82,78 L82,58 Z"
+        fill="none" stroke="#1C1714" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Línea base dorada -->
+  <rect x="10" y="78" width="112" height="2.5" rx="1.2" fill="#B8966A"/>
+
+  <!-- INVERSIONES -->
+  <text x="66" y="98"
+        font-family="'Jost', 'Helvetica Neue', Arial, sans-serif"
+        font-size="14" font-weight="700"
+        fill="#1C1714"
+        text-anchor="middle"
+        letter-spacing="2">INVERSIONES</text>
+
+  <!-- De la Roda -->
+  <text x="66" y="112"
+        font-family="'Jost', 'Helvetica Neue', Arial, sans-serif"
+        font-size="8.5" font-weight="400"
+        fill="#B8966A"
+        text-anchor="middle"
+        letter-spacing="3.5">DE LA RODA</text>
+
+</svg>
