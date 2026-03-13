@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto · Inversiones de la Roda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream:   #F6F1E9;
+      --sand:    #E8DFD0;
+      --gold:    #B8966A;
+      --gold-lt: #D4B896;
+      --dark:    #1C1714;
+      --mid:     #5A4E44;
+      --light:   #8C7B6E;
+      --white:   #FDFAF6;
+      --shadow:  0 4px 32px rgba(28,23,20,.10);
+    }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--dark); min-height: 100vh; }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--sand);
+      padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .logo img { height: 50px; object-fit: contain; display: block; }
+    nav a {
+      font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--mid); text-decoration: none; margin-left: 2rem; transition: color .2s;
+    }
+    nav a:hover { color: var(--gold); }
+    .nav-btn {
+      font-family: 'Jost', sans-serif; font-size: .75rem; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase;
+      background: var(--dark); color: var(--cream);
+      border: none; border-radius: 4px; padding: .55rem 1.3rem;
+      cursor: pointer; text-decoration: none; transition: background .2s; margin-left: 2rem;
+    }
+    .nav-btn:hover { background: var(--mid); }
+
+    /* HERO */
+    .hero {
+      background: var(--dark); color: var(--cream);
+      padding: 5rem 2.5rem 4.5rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(184,150,106,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block; border: 1px solid var(--gold); color: var(--gold-lt);
+      font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
+      padding: .35rem 1rem; border-radius: 2rem; margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; line-height: 1.1;
+      max-width: 600px; margin: 0 auto 1.2rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-lt); }
+    .hero p { color: #B0A090; font-weight: 300; font-size: 1rem; max-width: 420px; margin: 0 auto; line-height: 1.7; }
+
+    /* CONTACT SECTION */
+    .contact-wrap { max-width: 620px; margin: 3.5rem auto 6rem; padding: 0 2rem; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .8rem; font-weight: 400; letter-spacing: .08em;
+      color: var(--light); text-decoration: none; margin-bottom: 2rem;
+      transition: color .2s;
+    }
+    .back-link:hover { color: var(--gold); }
+
+    .contact-card {
+      background: var(--white); border-radius: 12px;
+      border: 1px solid var(--sand); box-shadow: var(--shadow); overflow: hidden;
+    }
+
+    /* Agent banner */
+    .agent-banner {
+      background: var(--dark);
+      padding: 2.5rem; display: flex; align-items: center; gap: 1.5rem;
+      position: relative; overflow: hidden;
+    }
+    .agent-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 100% 50%, rgba(184,150,106,.12) 0%, transparent 70%);
+    }
+    .agent-avatar {
+      width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0;
+      border: 2px solid rgba(184,150,106,.5);
+      overflow: hidden;
+    }
+    .agent-avatar img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .agent-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 400; color: var(--cream); margin-bottom: .25rem;
+    }
+    .agent-role { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-lt); }
+
+    /* Items */
+    .contact-items { padding: 2rem 2.5rem 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
+
+    .contact-item {
+      display: flex; align-items: center; gap: 1.2rem;
+      padding: 1.2rem 1.4rem;
+      background: var(--cream); border-radius: 8px;
+      border: 1px solid var(--sand); text-decoration: none;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    a.contact-item:hover {
+      border-color: var(--gold); transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(28,23,20,.10);
+    }
+    .contact-icon {
+      width: 46px; height: 46px; border-radius: 8px; flex-shrink: 0;
+      background: var(--dark); color: var(--gold-lt);
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .contact-label {
+      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--light); margin-bottom: .25rem;
+    }
+    .contact-value { font-size: 1rem; font-weight: 500; color: var(--dark); }
+    .contact-hint  { font-size: .74rem; color: var(--light); margin-top: .15rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); color: #7A6E65;
+      text-align: center; padding: 2.5rem;
+      font-size: .78rem; letter-spacing: .08em;
+    }
+    footer img { height: 40px; opacity: .5; margin: 0 auto .8rem; display: block; filter: brightness(10); }
+
+    @media (max-width: 768px) {
+      header { padding: 0 1.2rem; }
+      nav { display: none; }
+      .hero { padding: 3.5rem 1.2rem 3rem; }
+      .contact-wrap { padding: 0 1.2rem; }
+      .agent-banner { padding: 1.8rem 1.5rem; }
+      .contact-items { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <img src="images/logo.jpeg" alt="Inversiones de la Roda"/>
+  </a>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="index.html#propiedades">Propiedades</a>
+    <a href="contact.html" class="nav-btn">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-tag">Estamos aquí para ayudarte</div>
+  <h1>Ponte en <em>contacto</em></h1>
+  <p>¿Tienes alguna pregunta sobre una propiedad? Llámanos o escríbenos, estaremos encantados de atenderte.</p>
+</section>
+
+<div class="contact-wrap">
+  <a class="back-link" href="index.html">← Volver a propiedades</a>
+
+  <div class="contact-card">
+    <div class="agent-banner">
+      <div class="agent-avatar">
+        <img src="images/olga.jpeg" alt="Olga Guzmán Sánchez"/>
+      </div>
+      <div>
+        <div class="agent-name">Olga Guzmán Sánchez</div>
+        <div class="agent-role">Agente · Inversiones de la Roda</div>
+      </div>
+    </div>
+
+    <div class="contact-items">
+
+      <a class="contact-item" href="tel:+34660536886">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Teléfono · WhatsApp</div>
+          <div class="contact-value">660 536 886</div>
+          <div class="contact-hint">Toca para llamar</div>
+        </div>
+      </a>
+
+      <a class="contact-item" href="mailto:inversionesdelaroda@gmail.com">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Correo electrónico</div>
+          <div class="contact-value">inversionesdelaroda@gmail.com</div>
+          <div class="contact-hint">Toca para enviar un correo</div>
+        </div>
+      </a>
+
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="contact-label">Horario de atención</div>
+          <div class="contact-value">Lunes – Viernes</div>
+          <div class="contact-hint">9:00 – 19:00 h</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <img src="images/logo.jpeg" alt="Inversiones de la Roda"/>
+  © 2025 Inversiones de la Roda · Todos los derechos reservados
+</footer>
+
+</body>
+</html>
