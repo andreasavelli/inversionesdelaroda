@@ -34,14 +34,14 @@
       "img": ""
     },
     {
-      "titulo": "Piso moderno cerca de la playa",
-      "tipo": "Alquiler",
-      "inmueble": "Piso",
-      "ubicacion": "Las Américas, Tenerife",
-      "precio": 1200,
+      "titulo": "Duplex en Adeje",
+      "tipo": "Venta",
+      "inmueble": "Duplex",
+      "ubicacion": "Adeje",
+      "precio": 385000,
       "hab": 2,
-      "banos": 1,
-      "m2": 70,
+      "banos": 2,
+      "m2": 90,
       "img": ""
     }
   ]
